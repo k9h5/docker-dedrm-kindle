@@ -13,9 +13,10 @@ RUN set -eux \
   && cd $HOME \
   && mkdir redrm \
   && cd redrm \
-  && unzip /usr/local/src/DeDRM_tools_$REDRM_VERSION.zip
+  && unzip /usr/local/src/DeDRM_tools_$REDRM_VERSION.zip \
+  && mkdir /root/out
 
 COPY decryptk4mobi.py /root/redrm/DeDRM_Windows_Application/DeDRM_App/DeDRM_lib/lib/
 
-ENTRYPOINT ["/root/redrm/DeDRM_Windows_Application/DeDRM_App/DeDRM_lib/lib/decryptk4mobi.py"]
+ENTRYPOINT ["/root/redrm/DeDRM_Windows_Application/DeDRM_App/DeDRM_lib/lib/decryptk4mobi.py", "/root/out"]
 CMD []
