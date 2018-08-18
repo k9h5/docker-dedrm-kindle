@@ -1,13 +1,24 @@
 # docker-dedrm-kindle
 
-## How to use (Recommended)
+## How to use
+
+### easy script (Recommended)
+
+#### single file convert
+
 1. [Extract your kindle key](https://github.com/apprenticeharper/DeDRM_tools/blob/b1d13f2b/src/DeDRM_Kindle%20for%20Mac%20and%20PC%20Key_Help.htm)
 2. Get your kindle content file (*.azw) bounds with your key
 3. `./convert.sh keyfilepath srcfilepath dstfilepath`
 4. Read dstfilepath or convert other formats
 
+#### multiple files convert
 
-## Use docker image directly
+1. [Extract your kindle key](https://github.com/apprenticeharper/DeDRM_tools/blob/b1d13f2b/src/DeDRM_Kindle%20for%20Mac%20and%20PC%20Key_Help.htm)
+2. Get your kindle content files (*.azw) bound with your key
+3. `./convert-all.sh keyfilepath srcdirpath dstdirpath`
+4. Read dstdirpath or convert other formats
+
+### Use docker image directly
 
 1. [Extract your kindle key](https://github.com/apprenticeharper/DeDRM_tools/blob/b1d13f2b/src/DeDRM_Kindle%20for%20Mac%20and%20PC%20Key_Help.htm) and name it as 'default_key.k4i'
 2. Get your kindle content file (*.azw) bounds with your key
