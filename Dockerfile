@@ -18,7 +18,8 @@ RUN set -eux \
 
 # work around for error handling bug
 RUN set -eux \
-  && sed -i -e '194i\ \ \ \ \ \ \ \ raise e' /root/redrm/DeDRM_Windows_Application/DeDRM_App/DeDRM_lib/lib/scriptinterface.py
+  && sed -i -e '194i\ \ \ \ \ \ \ \ raise e' /root/redrm/DeDRM_Windows_Application/DeDRM_App/DeDRM_lib/lib/scriptinterface.py \
+  && sed -i -e '194i\ \ \ \ \ \ \ \ traceback.print_exc()' /root/redrm/DeDRM_Windows_Application/DeDRM_App/DeDRM_lib/lib/scriptinterface.py
 
 COPY decryptk4mobi.py /root/redrm/DeDRM_Windows_Application/DeDRM_App/DeDRM_lib/lib/
 
