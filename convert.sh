@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -eux
+set -eu
 
 if [ $# -ne 3 ]; then
   echo "Usage: $0 keyfilepath srcfilepath dstdirpath" 1>&2
@@ -49,4 +49,4 @@ tmpfilename=$(basename "$tmpfilepath")
 ext=${tmpfilename##*.}
 srcfilename_without_ext=${orig_srcfilename%.*}
 
-mv "$dstdirpath/tmpname_nodrm.azw3" "$dstdirpath/$srcfilename_without_ext.$ext"
+mv "$dstdirpath/tmpname_nodrm."* "$dstdirpath/$srcfilename_without_ext.$ext"

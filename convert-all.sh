@@ -21,14 +21,13 @@ if [[ ! -d $dstdirpath ]]; then
   echo "dstdirpath: $dstdirpath should be a directory" 1>&2
 fi
 
-find "$srcdirpath" -name "*.azw" | while read srcfilepath; do
+while read srcfilepath; do
   filename_ext=$(basename "$srcfilepath")
   filename=${filename_ext%.azw}
-  dstfilepath=$dstdirpath/${filename}_nodrm.azw3
-  if [[ -e "$dstfilepath" ]]; then
+  if ls "$dstdirpath/${filename}"* 1> /dev/null 2>&1; then
     echo "$srcfilepath is already converted."
   else
     echo "$srcfilepath is converting now ..."
-    convert.sh "$keyfilepath" "$srcfilepath" "$dstfilepath"
+    convert.sh "$keyfilepath" "$srcfilepath" "$dstdirpath"
   fi
-done
+done < <(find "$srcdirpath" -name "*.azw")
