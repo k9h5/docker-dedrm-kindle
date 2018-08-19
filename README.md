@@ -16,6 +16,7 @@
 
 1. [Extract your kindle key](https://github.com/apprenticeharper/DeDRM_tools/blob/b1d13f2b/src/DeDRM_Kindle%20for%20Mac%20and%20PC%20Key_Help.htm)
 1. Get your kindle content files (*.azw) bound with your key
+1. `filename=convert.sh bash -c 'wget "https://raw.githubusercontent.com/k9h5/docker-dedrm-kindle/master/$filename" -O ~/bin/$filename && chmod +x ~/bin/$filename'`
 1. `filename=convert-all.sh bash -c 'wget "https://raw.githubusercontent.com/k9h5/docker-dedrm-kindle/master/$filename" -O ~/bin/$filename && chmod +x ~/bin/$filename'`
 1. `./convert-all.sh keyfilepath srcdirpath dstdirpath`
 1. Read dstdirpath or convert other formats
