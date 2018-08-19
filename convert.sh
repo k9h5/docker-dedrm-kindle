@@ -43,6 +43,6 @@ trap cleanup EXIT
 cp "$keyfilepath" "$tmpkeydirpath"
 
 image=k9h5/dedrm-kindle
-docker container run -v "$dstdirpath":"/root/out" -v "$srcdirpath":"/root/in" -v "$tmpkeydirpath":"/root/.DeDRMPrefs" -it $image "/root/in/$srcfilename"
+docker container run --rm -v "$dstdirpath":"/root/out" -v "$srcdirpath":"/root/in" -v "$tmpkeydirpath":"/root/.DeDRMPrefs" $image "/root/in/$srcfilename"
 
 mv "$dstdirpath/tmpname_nodrm.azw3" "$dstdirpath/$dstfilename"
